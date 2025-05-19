@@ -152,8 +152,12 @@ alias mv='mv -i'
 
 # Prompt: colored, shows user@host:path (git branch), and venv if present
 parse_git_branch() {
-  git branch 2>/dev/null | grep '*' | sed 's/* //'
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [ -n "$branch" ]; then
+    echo ":$branch"
+  fi
 }
+
 
 parse_venv() {
   if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -161,7 +165,7 @@ parse_venv() {
   fi
 }
 
-PS1='\[\e[38;5;81m\]\u@\h\[\e[0m\]:\[\e[38;5;190m\]\w\[\e[0m\]\[\e[38;5;208m\]:$(parse_git_branch)\[\e[0m\] \[\e[38;5;114m\]$(parse_venv)\[\e[0m\]\n\$ '
+PS1='\[\e[38;5;81m\]\u@\h\[\e[0m\]:\[\e[38;5;190m\]\w\[\e[0m\]\[\e[38;5;208m\]$(parse_git_branch)\[\e[0m\] \[\e[38;5;114m\]$(parse_venv)\[\e[0m\]\n\$ '
 
 # Enable auto-correction suggestions if thefuck is installed
 if command -v thefuck &> /dev/null; then
