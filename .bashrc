@@ -116,15 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Clear screen and show a joke
 clear
-jokes -bl nsfw,religious,political,racist,sexist,explicit -c programming
-
-# Show daily password
 echo
-echo -e "\e[1;36mHere is your daily password:\e[0m"
-passgen -t abcd -l 24
-
 # Display fastfetch or fallback to neofetch
 if command -v fastfetch &> /dev/null; then
     fastfetch
@@ -203,9 +196,4 @@ export LESS_TERMCAP_us=$'\e[1;32m'
 
 # Export editor
 export EDITOR=nano
-
-# Fortune + cow (fun optional add-on)
-# if command -v fortune &> /dev/null && command -v cowsay &> /dev/null; then
-#     fortune | cowsay
-# fi
 
