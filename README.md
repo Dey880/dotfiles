@@ -1,6 +1,6 @@
 # Custom .bashrc Configuration
 
-A personalized `.bashrc` script with quality-of-life improvements, styling, and useful aliases to enhance your Bash shell experience.
+A personalized `.bashrc` script with quality-of-life improvements, styling, and useful aliases to enhance your Bash shell experience with focus on git.
 
 ---
 
@@ -44,7 +44,7 @@ A personalized `.bashrc` script with quality-of-life improvements, styling, and 
 
 ## Usage
 
-- Use aliases like `please` and `please-do` instead of `sudo` and `sudo !!`
+- Use aliases like `please` instead of `sudo`
 - Navigate directories quickly with `..` and `...`
 - Run `update` to upgrade your system packages
 - Enjoy automatic Git branch display and virtual environment indication in your prompt
