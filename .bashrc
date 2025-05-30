@@ -199,5 +199,5 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;32m'
 
 # Export editor
-export EDITOR=nano
+export EDITOR=vim
 
